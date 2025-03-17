@@ -23,43 +23,6 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // Form validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setFormStatus({
-        submitted: false,
-        error: true,
-        message: 'Please fill in all required fields.'
-      });
-      return;
-    }
-    
-    // Simulate form submission
-    try {
-      setFormStatus({
-        submitted: true,
-        error: false,
-        message: 'Thank you for your message! We\'ll be in touch soon.'
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      
-    } catch (error) {
-      setFormStatus({
-        submitted: false,
-        error: true,
-        message: 'Something went wrong. Please try again later.'
-      });
-    }
-  };
-
   return (
     <section className=" mt-28 text-white py-16">
       {/* Background glow */}
@@ -98,7 +61,7 @@ const ContactSection = () => {
               </div>
             )}
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Name <span className="text-teal-400">*</span>
@@ -111,7 +74,6 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="w-full bg-slate-700/70 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent"
                   placeholder="Your name"
-                  required
                 />
               </div>
               
@@ -127,7 +89,6 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="w-full bg-slate-700/70 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent"
                   placeholder="email@example.com"
-                  required
                 />
               </div>
               
@@ -143,19 +104,19 @@ const ContactSection = () => {
                   rows={4}
                   className="w-full bg-slate-700/70 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent resize-none"
                   placeholder="How can we help you?"
-                  required
                 ></textarea>
               </div>
+              
               <a href="https://wa.me/917012151014">
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
-              >
-                <span>Send Message</span>
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
+                <button
+                  type="button"
+                  className="w-full bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
+                >
+                  <span>Send Message</span>
+                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
               </a>
             </form>
           </div>
