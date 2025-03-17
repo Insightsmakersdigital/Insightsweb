@@ -79,7 +79,7 @@ const AboutMateDigital = () => {
               
               <div className="space-y-6">
                 <p className="text-lg text-gray-100">
-                  We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Founded in 2023, Insight has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
+                  We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Founded in 2023, Insights has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
                 </p>
                 
                 <p className="text-gray-300">

@@ -1,5 +1,4 @@
 import AboutUs from '@/components/AboutUs'
-import TeamSection from '@/components/Team'
 import GlobalAchievements from "@/components/Global";
 import React from 'react'
 import SimpleMissionVision from '@/components/Mission';
@@ -14,11 +13,6 @@ function page() {
 
       <div className="snap-center">
         <SimpleMissionVision/>
-      </div>
-
-
-      <div className="snap-center">
-        <TeamSection/>
       </div>
 
       <div className="snap-center">

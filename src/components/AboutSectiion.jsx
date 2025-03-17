@@ -94,7 +94,7 @@ const AboutSection = () => {
           <div className="reveal reveal-right">
             <h2 className="text-4xl font-bold mb-5">
               <span className="text-white">About </span>
-              <span className="text-[#5eead4]">Insight</span>
+              <span className="text-[#5eead4]">Insights</span>
             </h2>
             
             <p className="text-gray-300 mb-6 leading-relaxed">

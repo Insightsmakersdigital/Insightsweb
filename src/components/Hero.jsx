@@ -113,7 +113,7 @@ const VideoHeroSection = () => {
           }}
         >
           {/* ENHANCED: Large background glow behind the entire content - more vibrant and perfectly centered */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] h-[220%] bg-gradient-to-br from-teal-600/50 via-cyan-500/40 to-blue-500/50 rounded-full blur-[140px] -z-10 animate-pulse-ultra"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] h-[220%] bg-gradient-to-br from-teal-900/50 via-cyan-800/40 to-blue-700/50 rounded-full blur-[140px] -z-10 animate-pulse-ultra"></div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center text-white leading-tight relative">
             <span className="relative z-10">Mark Your<br />
@@ -121,20 +121,20 @@ const VideoHeroSection = () => {
               Signature
             </span></span>
             {/* ENHANCED: Prominent glow effect behind text */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-to-r from-teal-500/50 via-cyan-400/60 to-teal-500/50 rounded-full blur-[70px] -z-10 animate-pulse-slow"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[170%] bg-gradient-to-b from-teal-400/50 via-cyan-500/40 to-transparent rounded-[50%] blur-[60px] -z-10 animate-pulse-medium"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-to-r from-teal-900/50 via-cyan-800/40 to-blue-700/50  rounded-full blur-[70px] -z-10 animate-pulse-slow"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[170%] bg-gradient-to-b from-teal-800/50 via-cyan-700/40 to-transparent rounded-[50%] blur-[60px] -z-10 animate-pulse-medium"></div>
           </h1>
           
           <p className="mt-6 text-lg text-center text-gray-300 max-w-3xl mx-auto relative z-10">
             Elevate Your Brand with Cutting-Edge Digital Solutions and Unleash the Power
             of Innovation in a Rapidly Evolving Online Landscape.
-            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[220%] bg-gradient-to-t from-teal-500/15 via-transparent to-transparent rounded-full blur-[40px] -z-10"></span>
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[220%] bg-gradient-to-t from-teal-900/15 via-transparent to-transparent rounded-full blur-[40px] -z-10"></span>
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="#" 
-              className="relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 group shadow-lg shadow-teal-900/20"
+              className="relative overflow-hidden bg-gradient-to-r from-teal-700 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 group shadow-lg shadow-teal-900/20"
             >
               <span className="relative z-10 flex items-center">
                 Get Started

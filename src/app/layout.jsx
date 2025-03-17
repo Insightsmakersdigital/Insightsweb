@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Insights Makers",
+  title: "Insights",
   description: "Mark your signature",
   favicon: "/favicon.ico",
   
