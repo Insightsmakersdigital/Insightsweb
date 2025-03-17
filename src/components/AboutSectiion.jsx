@@ -94,11 +94,11 @@ const AboutSection = () => {
           <div className="reveal reveal-right">
             <h2 className="text-4xl font-bold mb-5">
               <span className="text-white">About </span>
-              <span className="text-[#5eead4]">Insight Makers</span>
+              <span className="text-[#5eead4]">Insight</span>
             </h2>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Insight Makers has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
+              We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Insight has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
             </p>
             
             <div className="mb-8">

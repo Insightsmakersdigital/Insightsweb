@@ -74,16 +74,16 @@ const AboutMateDigital = () => {
             {/* Content Column on Right */}
             <div className="order-1 lg:order-2">
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                About <span className="text-teal-300">Insights Makers</span>
+                About <span className="text-teal-300">Insights</span>
               </h1>
               
               <div className="space-y-6">
                 <p className="text-lg text-gray-100">
-                  We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Founded in 2023, Insight Makers has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
+                  We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Founded in 2023, Insight has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
                 </p>
                 
                 <p className="text-gray-300">
-                  At Insight Makers, we believe that exceptional digital experiences are built at the intersection of strategic thinking, creative design, and technical excellence. Our multidisciplinary team brings together diverse perspectives and expertise to tackle complex challenges and create meaningful solutions.
+                  At Insights, we believe that exceptional digital experiences are built at the intersection of strategic thinking, creative design, and technical excellence. Our multidisciplinary team brings together diverse perspectives and expertise to tackle complex challenges and create meaningful solutions.
                 </p>
                 
                 <p className="text-gray-300">
