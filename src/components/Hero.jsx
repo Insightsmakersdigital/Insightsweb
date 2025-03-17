@@ -47,11 +47,11 @@ const VideoHeroSection = () => {
           }}
         ></div>
         
-        {/* ENHANCED: Center glow effect - more vibrant and centered */}
+        {/* ENHANCED: Center glow effect - more vibrant and centered, responsive sizes */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
           {/* Large outer glow - creates a base layer */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[1400px] rounded-full blur-[180px] animate-pulse-center"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1200px] lg:w-[1400px] h-[800px] md:h-[1200px] lg:h-[1400px] rounded-full blur-[100px] md:blur-[180px] animate-pulse-center"
             style={{
               background: 'radial-gradient(circle, rgba(45, 212, 191, 0.25) 0%, rgba(20, 184, 166, 0.18) 40%, transparent 70%)'
             }}
@@ -59,7 +59,7 @@ const VideoHeroSection = () => {
           
           {/* Main glow layer - more vibrant and intense */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full blur-[150px] animate-pulse-center-alt"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] lg:w-[1000px] h-[600px] md:h-[800px] lg:h-[1000px] rounded-full blur-[80px] md:blur-[150px] animate-pulse-center-alt"
             style={{
               background: 'radial-gradient(circle, rgba(45, 212, 191, 0.35) 0%, rgba(20, 184, 166, 0.25) 50%, transparent 75%)'
             }}
@@ -67,7 +67,7 @@ const VideoHeroSection = () => {
           
           {/* Secondary glow with cyan accent for color variation */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[120px] animate-pulse-core"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[600px] lg:w-[800px] h-[500px] md:h-[600px] lg:h-[800px] rounded-full blur-[60px] md:blur-[120px] animate-pulse-core"
             style={{
               background: 'radial-gradient(circle, rgba(56, 189, 248, 0.30) 0%, rgba(14, 165, 233, 0.22) 50%, transparent 75%)'
             }}
@@ -75,7 +75,7 @@ const VideoHeroSection = () => {
           
           {/* Inner mid-layer glow - more brightness */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[100px] animate-glow-intense"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[500px] lg:w-[600px] h-[400px] md:h-[500px] lg:h-[600px] rounded-full blur-[50px] md:blur-[100px] animate-glow-intense"
             style={{
               background: 'radial-gradient(circle, rgba(20, 184, 166, 0.40) 0%, rgba(6, 182, 212, 0.30) 60%, transparent 80%)'
             }}
@@ -83,7 +83,7 @@ const VideoHeroSection = () => {
           
           {/* ENHANCED: Bright core glow - most intense */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full blur-[70px] animate-core-pulse"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[300px] lg:w-[350px] h-[200px] md:h-[300px] lg:h-[350px] rounded-full blur-[40px] md:blur-[70px] animate-core-pulse"
             style={{
               background: 'radial-gradient(circle, rgba(94, 234, 212, 0.50) 0%, rgba(45, 212, 191, 0.35) 60%, transparent 90%)'
             }}
@@ -91,7 +91,7 @@ const VideoHeroSection = () => {
           
           {/* ENHANCED: Ultra-bright center point */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] rounded-full blur-[40px] animate-center-pulse"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80px] md:w-[120px] lg:w-[150px] h-[80px] md:h-[120px] lg:h-[150px] rounded-full blur-[25px] md:blur-[40px] animate-center-pulse"
             style={{
               background: 'radial-gradient(circle, rgba(165, 243, 252, 0.65) 0%, rgba(94, 234, 212, 0.45) 60%, transparent 90%)'
             }}
@@ -112,29 +112,29 @@ const VideoHeroSection = () => {
             y: textY
           }}
         >
-          {/* ENHANCED: Large background glow behind the entire content - more vibrant and perfectly centered */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] h-[220%] bg-gradient-to-br from-teal-900/50 via-cyan-800/40 to-blue-700/50 rounded-full blur-[140px] -z-10 animate-pulse-ultra"></div>
+          {/* ENHANCED: Large background glow behind the entire content - more vibrant and perfectly centered, responsive */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] sm:w-[180%] md:w-[200%] lg:w-[220%] h-[150%] sm:h-[180%] md:h-[200%] lg:h-[220%] bg-gradient-to-br from-teal-900/50 via-cyan-800/40 to-blue-700/50 rounded-full blur-[80px] md:blur-[140px] -z-10 animate-pulse-ultra"></div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center text-white leading-tight relative">
             <span className="relative z-10">Mark Your<br />
              <span className="text-[#4fd1c5] relative">
               Signature
             </span></span>
-            {/* ENHANCED: Prominent glow effect behind text */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-to-r from-teal-900/50 via-cyan-800/40 to-blue-700/50  rounded-full blur-[70px] -z-10 animate-pulse-slow"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[170%] bg-gradient-to-b from-teal-800/50 via-cyan-700/40 to-transparent rounded-[50%] blur-[60px] -z-10 animate-pulse-medium"></div>
+            {/* ENHANCED: Prominent glow effect behind text - responsive */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] sm:w-[130%] md:w-[140%] lg:w-[150%] h-[120%] sm:h-[130%] md:h-[140%] lg:h-[150%] bg-gradient-to-r from-teal-900/50 via-cyan-800/40 to-blue-700/50 rounded-full blur-[40px] md:blur-[70px] -z-10 animate-pulse-slow"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] sm:w-[110%] md:w-[115%] lg:w-[120%] h-[140%] sm:h-[150%] md:h-[160%] lg:h-[170%] bg-gradient-to-b from-teal-800/50 via-cyan-700/40 to-transparent rounded-[50%] blur-[30px] md:blur-[60px] -z-10 animate-pulse-medium"></div>
           </h1>
           
           <p className="mt-6 text-lg text-center text-gray-300 max-w-3xl mx-auto relative z-10">
             Elevate Your Brand with Cutting-Edge Digital Solutions and Unleash the Power
             of Innovation in a Rapidly Evolving Online Landscape.
-            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[220%] bg-gradient-to-t from-teal-900/15 via-transparent to-transparent rounded-full blur-[40px] -z-10"></span>
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] sm:w-[120%] md:w-[130%] lg:w-[140%] h-[180%] sm:h-[200%] md:h-[210%] lg:h-[220%] bg-gradient-to-t from-teal-900/15 via-transparent to-transparent rounded-full blur-[25px] md:blur-[40px] -z-10"></span>
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="#" 
-              className="relative overflow-hidden bg-gradient-to-r from-teal-700 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 group shadow-lg shadow-teal-900/20"
+              className="relative overflow-hidden bg-gradient-to-r from-teal-700 to-teal-900 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 group shadow-lg shadow-teal-900/20"
             >
               <span className="relative z-10 flex items-center">
                 Get Started
