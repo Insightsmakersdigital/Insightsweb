@@ -150,7 +150,7 @@ const ContactSection = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-sm font-medium text-gray-400">Email</h4>
-                  <p className="text-base text-white">info@insightmakers.com</p>
+                  <p className="text-base text-white">Info@insightsmarketers.com</p>
                 </div>
               </div>
               
@@ -163,10 +163,7 @@ const ContactSection = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="ml-4">
-                  <h4 className="text-sm font-medium text-gray-400">Address</h4>
-                  <p className="text-base text-white">123 Business Street,<br />New York, NY 10001</p>
-                </div>
+                
               </div>
             </div>
             
