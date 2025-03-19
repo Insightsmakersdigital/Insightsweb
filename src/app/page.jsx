@@ -3,6 +3,7 @@ import AboutSection from "@/components/AboutSectiion";
 import ExcellencePath from "@/components/ExcellencePath";
 import GlobalAchievements from "@/components/Global";
 import Hero from "@/components/Hero";
+import LoadingScreen from "@/components/LoadingScreen";
 import LogoSlider from "@/components/LogoSlider";
 import MissionVisionSection from "@/components/Mission";
 import WorksNew from "@/components/Portfolio";
@@ -15,6 +16,9 @@ import Testimonials from "@/components/Testimonials";
 export default function Home() {
   return (
     <div className=" overflow-hidden" style={{ scrollBehavior: "smooth" }}>
+
+
+      <LoadingScreen>
       
       <div className="snap-center">
         <Hero/>
@@ -53,6 +57,8 @@ export default function Home() {
       <div className="snap-center">
         <GlobalAchievements/>
       </div>
+
+      </LoadingScreen>
 
     </div>
   );
