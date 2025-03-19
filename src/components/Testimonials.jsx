@@ -25,7 +25,7 @@ const testimonials = [
   {
     quote: "Marketing in the tech space isn't easy, but Insights Marketers made it look effortless. They took the time to understand our business and crafted strategies that actually worked. Their expertise and dedication made a huge impact on our growth.",
     name: "Deepak",
-    title: "Zeropi Tech Solution pvt ltd",
+    title: "Zeropi Tech Solutions pvt ltd",
     image: "/Clients/lg6.png"
   }
 ];
