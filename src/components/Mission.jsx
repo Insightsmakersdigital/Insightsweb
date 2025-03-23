@@ -9,7 +9,7 @@ const SimpleMissionVision = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 text-white">
-          Our <span className='text-teal-600'>Mission</span> & <span className='text-teal-600'>Vission</span>
+          Our <span className='text-teal-600'>Mission</span> & <span className='text-teal-600'>Vision</span>
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
             Driven by innovation and excellence, we are committed to transforming digital experiences and creating lasting value for our clients.
