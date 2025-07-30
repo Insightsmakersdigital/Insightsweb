@@ -79,16 +79,15 @@ const AboutMateDigital = () => {
               
               <div className="space-y-6">
                 <p className="text-lg text-gray-100">
-                  We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Founded in 2023, Insights has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
+                nsights Marketers is a result-driven digital marketing company based in Kochi, Kerala, dedicated to helping businesses grow through strategy, creativity, and technology. Founded in 2024, we specialize in digital marketing, branding, web development, social media marketing, performance marketing, and content creation.
+
+We work with clients across industries like e-commerce, education, healthcare, real estate, and hospitality, delivering impactful digital solutions tailored to each brand’s unique goals. Our services include responsive website development, UI/UX design, SEO, Google Ads, and Meta (Facebook & Instagram) advertising.
+
+At Insights, we combine data-backed strategies with compelling creativity to ensure measurable results. We believe in strong client partnerships, working closely to understand your business and build digital experiences that connect, engage, and convert.
+
                 </p>
                 
-                <p className="text-gray-300">
-                  At Insights, we believe that exceptional digital experiences are built at the intersection of strategic thinking, creative design, and technical excellence. Our multidisciplinary team brings together diverse perspectives and expertise to tackle complex challenges and create meaningful solutions.
-                </p>
-                
-                <p className="text-gray-300">
-                  We partner with forward-thinking companies ranging from ambitious startups to established enterprises across industries including finance, healthcare, education, and e-commerce. Our collaborative approach ensures that we truly understand your business needs before crafting bespoke digital solutions that drive growth and engagement.
-                </p>
+               
                 
                 {/* Feature highlights */}
                 <div className="grid grid-cols-2 gap-4 mt-8">

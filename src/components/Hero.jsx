@@ -126,8 +126,7 @@ const VideoHeroSection = () => {
           </h1>
           
           <p className="mt-6 text-lg text-center text-gray-300 max-w-3xl mx-auto relative z-10">
-            Elevate Your Brand with Cutting-Edge Digital Solutions and Unleash the Power
-            of Innovation in a Rapidly Evolving Online Landscape.
+          mpower your business with expert digital marketing, innovative branding, and custom web development solutions from a leading digital agency in Kochi, Kerala, driving growth across India, the USA and Dubai.
             <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] sm:w-[120%] md:w-[130%] lg:w-[140%] h-[180%] sm:h-[200%] md:h-[210%] lg:h-[220%] bg-gradient-to-t from-teal-900/15 via-transparent to-transparent rounded-full blur-[25px] md:blur-[40px] -z-10"></span>
           </p>
           

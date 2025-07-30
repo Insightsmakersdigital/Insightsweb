@@ -98,7 +98,7 @@ const AboutSection = () => {
             </h2>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              We're a passionate team of digital innovators, crafting experiences that connect, engage, and inspire. Insight has evolved into a creative powerhouse delivering cutting-edge solutions for businesses worldwide.
+            We are a passionate team of digital innovators offering expert digital marketing, branding, and web development services. Since our inception, Insights has grown into a creative digital agency in Kochi, Kerala, delivering impactful and results-driven solutions for businesses across India, the USA and Dubai. We craft digital experiences that connect, engage and inspire audiences, helping brands thrive in today’s competitive online environment.
             </p>
             
             <div className="mb-8">

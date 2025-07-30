@@ -137,6 +137,7 @@ const ContactSection = () => {
                 <div className="ml-4">
                   <h4 className="text-sm font-medium text-gray-400">Phone</h4>
                   <p className="text-base text-white">+91 70121 51014</p>
+                  <p className="text-base text-white">+91 9746655279</p>
                 </div>
               </div>
               
