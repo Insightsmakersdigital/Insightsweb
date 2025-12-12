@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const VideoHeroSection = () => {
   const sectionRef = useRef(null);
@@ -21,16 +21,50 @@ const VideoHeroSection = () => {
     };
   }, []);
   
-  // Scroll animation
+  // Scroll animation with extended range for smoother transitions
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"]
   });
   
-  // Transform values based on scroll
-  const videoScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.15]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.3], [0, -50]);
+  // Create smooth spring animations for all transforms
+  const springConfig = { 
+    stiffness: 100, 
+    damping: 30, 
+    restDelta: 0.001 
+  };
+  
+  // More gradual and smooth transforms with spring animation
+  const videoScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.7], [1, 1.08]), 
+    springConfig
+  );
+  
+  const videoY = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -100]), 
+    springConfig
+  );
+  
+  const textOpacity = useSpring(
+    useTransform(scrollYProgress, [0, 0.4], [1, 0]), 
+    springConfig
+  );
+  
+  const textY = useSpring(
+    useTransform(scrollYProgress, [0, 0.4], [0, -80]), 
+    springConfig
+  );
+  
+  const textScale = useSpring(
+    useTransform(scrollYProgress, [0, 0.3], [1, 0.95]), 
+    springConfig
+  );
+  
+  // Background glow intensity based on scroll
+  const glowIntensity = useSpring(
+    useTransform(scrollYProgress, [0, 0.5], [1, 0.6]), 
+    springConfig
+  );
 
   return (
     <section 
@@ -38,7 +72,10 @@ const VideoHeroSection = () => {
       className="relative w-full min-h-screen overflow-hidden pt-20 md:pt-48"
     >
       {/* Base background matching the image - centered dark gradient */}
-      <div className="absolute inset-0 z-0">
+      <motion.div 
+        className="absolute inset-0 z-0"
+        style={{ opacity: glowIntensity }}
+      >
         {/* Dark radial background centered in the screen */}
         <div 
           className="absolute inset-0"
@@ -97,19 +134,20 @@ const VideoHeroSection = () => {
             }}
           ></div>
         </div>
-      </div>
+      </motion.div>
       
       {/* Subtle grid overlay for texture */}
       <div className="absolute inset-0 z-[1] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgb3BhY2l0eT0iMC4wMyIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
 
       {/* Center content container */}
       <div className="relative z-10 max-w-7xl mx-auto min-h-[calc(100vh-8rem)] flex flex-col items-center justify-center px-4 overflow-visible">
-        {/* Text content - centered */}
+        {/* Text content - centered with smooth animations */}
         <motion.div 
           className="text-center mb-16 relative"
           style={{ 
             opacity: textOpacity,
-            y: textY
+            y: textY,
+            scale: textScale
           }}
         >
           {/* ENHANCED: Large background glow behind the entire content - more vibrant and perfectly centered, responsive */}
@@ -126,43 +164,49 @@ const VideoHeroSection = () => {
           </h1>
           
           <p className="mt-6 text-lg text-center text-gray-300 max-w-3xl mx-auto relative z-10">
-          power your business with expert digital marketing, innovative branding, and custom web development solutions from a leading digital agency in Kochi, Kerala, driving growth across India, the USA and Dubai.
+            power your business with expert digital marketing, innovative branding, and custom web development solutions from a leading digital agency in Kochi, Kerala, driving growth across India, the USA and Dubai.
             <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] sm:w-[120%] md:w-[130%] lg:w-[140%] h-[180%] sm:h-[200%] md:h-[210%] lg:h-[220%] bg-gradient-to-t from-teal-900/15 via-transparent to-transparent rounded-full blur-[25px] md:blur-[40px] -z-10"></span>
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="#" 
-              className="relative overflow-hidden bg-gradient-to-r from-teal-700 to-teal-900 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 group shadow-lg shadow-teal-900/20"
+              className="relative overflow-hidden bg-gradient-to-r from-teal-700 to-teal-900 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-500 group shadow-lg shadow-teal-900/20 transform hover:scale-105"
             >
               <span className="relative z-10 flex items-center">
                 Get Started
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </span>
-              <span className="absolute inset-0 w-full h-full bg-white/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
+              <span className="absolute inset-0 w-full h-full bg-white/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></span>
               <span className="absolute -inset-[100%] w-[300%] h-[300%] -z-10 rotate-45 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shine"></span>
               {/* Button glow effect */}
-              <span className="absolute -inset-1 rounded-full bg-teal-400/70 blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
+              <span className="absolute -inset-1 rounded-full bg-teal-400/70 blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></span>
             </a>
           </div>
         </motion.div>
 
-        {/* Video/Image container */}
+        {/* Video/Image container with smooth scroll effects */}
         <motion.div 
           className="w-full max-w-5xl mx-auto rounded-t-3xl overflow-hidden relative"
           style={{ 
-            scale: videoScale
+            scale: videoScale,
+            y: videoY
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 30
           }}
         >
           {/* ENHANCED: Glow border effect */}
-          <div className="absolute -inset-0.5 rounded-t-3xl blur-md animate-border-glow"></div>
+          <div className="absolute -inset-0.5 rounded-t-3xl blur-md animate-border-glow bg-gradient-to-r from-teal-400/50 via-cyan-400/50 to-blue-400/50"></div>
           
           <div className="w-full aspect-[16/9] bg-white/5 backdrop-blur-sm rounded-t-3xl overflow-hidden shadow-2xl relative z-10">
             {/* Replace with actual video or image */}
             <video 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-1000 ease-out"
               autoPlay
               muted
               loop
@@ -172,13 +216,16 @@ const VideoHeroSection = () => {
               Your browser does not support the video tag.
             </video>
             
-            {/* Overlay gradient for video */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#071a15]/40 to-transparent pointer-events-none"></div>
+            {/* Overlay gradient for video with smooth transition */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-t from-[#071a15]/40 to-transparent pointer-events-none"
+              style={{ opacity: useTransform(scrollYProgress, [0, 0.5], [0.4, 0.1]) }}
+            ></motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Enhanced animation keyframes */}
+      {/* Enhanced animation keyframes with smoother transitions */}
       <style jsx>{`
         @keyframes twinkle {
           0%, 100% { opacity: 0.2; }
@@ -206,6 +253,11 @@ const VideoHeroSection = () => {
           66% { opacity: 0.7; transform: scale(0.95); }
         }
         
+        @keyframes glow-intense {
+          0%, 100% { opacity: 0.6; transform: scale(1); }
+          50% { opacity: 0.85; transform: scale(1.12); }
+        }
+        
         @keyframes border-glow {
           0%, 100% { opacity: 0.6; }
           50% { opacity: 0.9; }
@@ -219,17 +271,17 @@ const VideoHeroSection = () => {
         
         @keyframes pulse-slow {
           0%, 100% { opacity: 0.7; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.1); }
+          50% { opacity: 1; transform: scale(1.08); }
         }
         
         @keyframes pulse-medium {
           0%, 100% { opacity: 0.6; transform: scale(1); }
-          50% { opacity: 0.9; transform: scale(1.15); }
+          50% { opacity: 0.9; transform: scale(1.12); }
         }
         
         @keyframes pulse-ultra {
-          0%, 100% { opacity: 0.6; transform: scale(0.95); }
-          50% { opacity: 0.9; transform: scale(1.05); }
+          0%, 100% { opacity: 0.6; transform: scale(0.98); }
+          50% { opacity: 0.9; transform: scale(1.03); }
         }
         
         @keyframes pulse-radial {
@@ -239,27 +291,27 @@ const VideoHeroSection = () => {
         
         @keyframes pulse-center {
           0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-          50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+          50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.06); }
         }
         
         @keyframes pulse-center-alt {
-          0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.1); }
-          50% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.9); }
+          0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.05); }
+          50% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.95); }
         }
         
         @keyframes pulse-core {
           0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-          50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.2); }
+          50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.15); }
         }
         
         @keyframes core-pulse {
           0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
-          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.25); }
         }
         
         @keyframes center-pulse {
           0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
-          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.4); }
         }
         
         .animate-twinkle {
@@ -282,6 +334,10 @@ const VideoHeroSection = () => {
           animation: glow-tertiary 15s ease-in-out infinite;
         }
         
+        .animate-glow-intense {
+          animation: glow-intense 7s ease-in-out infinite;
+        }
+        
         .animate-border-glow {
           animation: border-glow 4s ease-in-out infinite;
         }
@@ -291,15 +347,15 @@ const VideoHeroSection = () => {
         }
         
         .animate-pulse-slow {
-          animation: pulse-slow 6s ease-in-out infinite;
+          animation: pulse-slow 7s ease-in-out infinite;
         }
         
         .animate-pulse-medium {
-          animation: pulse-medium 8s ease-in-out infinite;
+          animation: pulse-medium 9s ease-in-out infinite;
         }
         
         .animate-pulse-ultra {
-          animation: pulse-ultra 10s ease-in-out infinite;
+          animation: pulse-ultra 11s ease-in-out infinite;
         }
         
         .animate-pulse-radial {
@@ -307,23 +363,37 @@ const VideoHeroSection = () => {
         }
         
         .animate-pulse-center {
-          animation: pulse-center 8s ease-in-out infinite;
+          animation: pulse-center 9s ease-in-out infinite;
         }
         
         .animate-pulse-center-alt {
-          animation: pulse-center-alt 12s ease-in-out infinite;
+          animation: pulse-center-alt 13s ease-in-out infinite;
         }
         
         .animate-pulse-core {
-          animation: pulse-core 6s ease-in-out infinite;
+          animation: pulse-core 7s ease-in-out infinite;
         }
         
         .animate-core-pulse {
-          animation: core-pulse 4s ease-in-out infinite;
+          animation: core-pulse 5s ease-in-out infinite;
         }
         
         .animate-center-pulse {
-          animation: center-pulse 3s ease-in-out infinite;
+          animation: center-pulse 4s ease-in-out infinite;
+        }
+        
+        /* Smooth scrolling for the entire document */
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        /* Add will-change for better performance */
+        .video-container {
+          will-change: transform, opacity;
+        }
+        
+        .text-container {
+          will-change: transform, opacity, scale;
         }
       `}</style>
     </section>
